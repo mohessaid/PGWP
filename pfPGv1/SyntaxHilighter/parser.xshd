@@ -1,0 +1,41 @@
+﻿<SyntaxDefinition name="Parser" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <Color name="Comment" foreground="Green" />
+    <Color name="String" foreground="Red" />
+	  <Color name="Regex" foreground="SaddleBrown" />
+    
+    <!-- This is the main ruleset. -->
+    <RuleSet>
+        <Span color="Comment" begin="//" />
+        <Span color="Comment" multiline="true" begin="/\*" end="\*/" />
+        
+        <Span color="String">
+            <Begin>"</Begin>
+            <End>"</End>
+            <RuleSet>
+                <!-- nested span for escape sequences -->
+                <Span begin="\\" end="." />
+            </RuleSet>
+        </Span>
+		
+		    <Span color="Regex">
+            <Begin>\["</Begin>
+            <End>\"]</End>
+        </Span>
+        <Span color="String">
+            <Begin>'</Begin>
+            <End>'</End>
+        </Span>
+        
+        <Keywords fontWeight="bold" foreground="Blue">
+            <Word>dlexic</Word>
+            <Word>flexic</Word>
+			      <Word>dsyntax</Word>
+            <Word>fsyntax</Word>
+            <Word>entier</Word>
+            <Word>naturel</Word>
+            <Word>reel</Word>
+            <Word>chaine</Word>
+            <Word>caractere</Word>
+        </Keywords>
+    </RuleSet>
+</SyntaxDefinition>

@@ -1,0 +1,135 @@
+﻿<Window x:Class="pfPGv1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" WindowState="Maximized"
+        >
+
+    <Grid x:Name="mainGrid">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="col1" 
+              Grid.Column="0"
+              Margin="20"
+              >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*"   />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#666666" CornerRadius="5" BorderThickness="3"
+                Margin="10 10 10 0" Grid.Row="0">
+                <Grid>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Button Content="Nouveau"
+                        Padding="10 10 10 10"
+                        
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Click="New_Click"/>
+                        <Button Content="YACC Vérification"
+                        Padding="10 10 10 10"
+                        Grid.Row="0"
+                        Margin="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Click="Scan_Click" />
+                        <Button Content="PF vérification"
+                        Padding="10 10 10 10"
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Click="PF_Click" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#666666" CornerRadius="5" BorderThickness="3"
+                Margin="10 10 10 0" Grid.Row="1">
+                <Grid x:Name="editeurGrid" Grid.Row="1">
+
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid x:Name="col2" Grid.Column="1"
+              Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*"   />
+                <RowDefinition Height="250"   />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            
+                
+            
+            <Border BorderBrush="#666666" CornerRadius="5" BorderThickness="3"
+                Margin="10 10 10 0" Grid.Row="0">
+                <Grid>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Auto">
+                        <TextBox x:Name="information"
+                                 IsReadOnly="true"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#666666" CornerRadius="5" BorderThickness="3"
+                Margin="10 10 10 0" Grid.Row="1">
+                <Grid x:Name="table">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Auto">
+                        <TextBox x:Name="tdr"
+                                 IsReadOnly="True">
+
+                        </TextBox>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#666666" CornerRadius="5" BorderThickness="3"
+                Margin="10 10 10 0" Grid.Row="2">
+                <Grid x:Name="console">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Auto">
+                        <TextBox x:Name="consoleText" 
+                                 IsReadOnly="true"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="3">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10 10 10 0"
+                            Height="40"
+                            VerticalAlignment="Top">
+                    <TextBox x:Name="Evaluation"
+                             Width="250"
+                             />
+                    <Button x:Name="Evaluate" Content="Entrer!"
+                            Width="150"
+                            Click="Evaluate_Click"></Button>
+                    
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10 10 10 0"
+                            Height="40"
+                            VerticalAlignment="Bottom">
+                    <TextBox x:Name="Chemin"
+                             Width="250"
+                             />
+                    <Button x:Name="GenererFichier" Content="Générer Fichier"
+                            Width="150"
+                            Click="GenererFichier_Click"></Button>
+                    
+                </StackPanel>    
+               
+            </Grid>
+        </Grid>
+
+
+
+
+
+    </Grid>
+</Window>
